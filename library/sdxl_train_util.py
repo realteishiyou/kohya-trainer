@@ -76,7 +76,7 @@ def _load_target_model(name_or_path: str, vae_path: Optional[str], model_version
         print(f"load Diffusers pretrained models: {name_or_path}, variant={variant}")
         try:
             try:
-                pipe = StableDiffusionXLPipeline.from_single_file("https://huggingface.co/syaimu/7th_Layer_XL/blob/main/7th_anime_XL-B.safetensors", torch_dtype=weight_dtype)
+                pipe = StableDiffusionXLPipeline.from_single_file("https://huggingface.co/syaimu/7th_Layer_XL/resolve/main/7th_anime_XL-BASE.safetensors", torch_dtype=weight_dtype)
             except EnvironmentError as ex:
                 if variant is not None:
                     print("try to load fp32 model")
