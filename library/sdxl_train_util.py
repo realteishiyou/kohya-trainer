@@ -75,8 +75,8 @@ def _load_target_model(name_or_path: str, vae_path: Optional[str], model_version
         variant = "fp16" if weight_dtype == torch.float16 else None
         print(f"load Diffusers pretrained models: {name_or_path}, variant={variant}")
         try:
-            try:
-                pipe = StableDiffusionXLPipeline.from_single_file("https://huggingface.co/syaimu/7th_Layer_XL/resolve/main/7th_anime_XL-B.safetensors", torch_dtype=weight_dtype)
+            try:                                                   
+                pipe = StableDiffusionXLPipeline.from_single_file("https://huggingface.co/syaimu/7th_Layer_XL/blob/main/7th_anime_XL-B.safetensors", torch_dtype=weight_dtype)
             except EnvironmentError as ex:
                 if variant is not None:
                     print("try to load fp32 model")
